@@ -6,10 +6,10 @@
  *
  *Return: 0.
  */
-void insertion_sort_list(listint_e **list)
+void insertion_sort_list(listint_t **list)
 {
-    listint_e *head = NULL, *right = NULL, *left = NULL;
-    listint_e *tmp1 = NULL, *tmp2 = NULL;
+    listint_t *head = NULL, *right = NULL, *left = NULL;
+    listint_t *tmp1 = NULL, *tmp2 = NULL;
 
     if (!list || !(*list) || (!((*list)->prev)&& !((*list)->next)))
 
@@ -20,7 +20,7 @@ void insertion_sort_list(listint_e **list)
     {
         tmp1 = head;
         tmp2 = head ->next;
-        while (tmp1 && tmp1->x > tmp2->x)
+        while (tmp1 && tmp1->n > tmp2->n)
         {
            right = tmp2->next;
            left = tmp1->prev;
