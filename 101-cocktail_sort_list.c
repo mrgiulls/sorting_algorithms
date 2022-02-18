@@ -6,10 +6,10 @@
  *
  * Return: Nothing
  */
-void cocktail_sort_list(listint_e **list)
+void cocktail_sort_list(listint_t **list)
 {
-	listint_e *turtle = NULL;
-	listint_e *rabbit = NULL;
+	listint_t *turtle = NULL;
+	listint_t *rabbit = NULL;
 	int left_limit = -1;
 	int right_limit = -1;
 	int count = 0, flag = 0;
@@ -23,7 +23,7 @@ void cocktail_sort_list(listint_e **list)
 		left_limit++;
 		while (turtle && rabbit && count != right_limit)
 		{
-			if (turtle->x > rabbit->x)
+			if (turtle->n > rabbit->n)
 				swap_nodes(&turtle, &rabbit, list), print_list(*list), flag = 1;
 			turtle = turtle->next;
 			rabbit = rabbit->next;
@@ -36,7 +36,7 @@ void cocktail_sort_list(listint_e **list)
 		rabbit = turtle->prev;
 		while (turtle && rabbit && count >= left_limit)
 		{
-			if (turtle->x < rabbit->x)
+			if (turtle->n < rabbit->n)
 				swap_nodes(&rabbit, &turtle, list), print_list(*list), flag = 1;
 			turtle = turtle->prev;
 			rabbit = rabbit->prev;
@@ -58,10 +58,10 @@ void cocktail_sort_list(listint_e **list)
  *
  * Return: Nothing
  */
-void swap_nodes(listint_e **turtle, listint_e **rabbit, listint_e **list)
+void swap_nodes(listint_t **turtle, listint_t **rabbit, listint_t **list)
 {
-	listint_e *before;
-	listint_e *after;
+	listint_t *before;
+	listint_t *after;
 
 	if (!(*turtle) || !(*rabbit))
 		return;
