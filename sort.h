@@ -12,13 +12,13 @@
  * @prev: Pointer to the previous element of the list
  * @next: Pointer to the next element of the list
  */
-typedef struct listint_e
+typedef struct listint_t
 {
-    const int x;
-    struct listint_e *prev;
-    struct listint_e *next;
+    const int n;
+    struct listint_t *prev;
+    struct listint_t *next;
     
-} listint_e;
+} listint_t;
 
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
